@@ -9,6 +9,8 @@ import telegram
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
 
+import secret
+
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -59,9 +61,8 @@ def error(bot, update, error):
 
 
 def main():
-    API_KEY = ''
     # Create the Updater and pass it your bot's token.
-    updater = Updater(API_KEY)
+    updater = Updater(secret.TOKEN)
 
     updater.dispatcher.add_handler(CommandHandler('start', start))
     updater.dispatcher.add_handler(CallbackQueryHandler(button))
