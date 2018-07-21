@@ -59,7 +59,7 @@ def error(bot, update, error):
 
 
 def main():
-    API_KEY = '469988448:AAESZWFUDbZj1u2Ar5BYWBalfxxKI2unKM4'
+    API_KEY = ''
     # Create the Updater and pass it your bot's token.
     updater = Updater(API_KEY)
 

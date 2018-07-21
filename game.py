@@ -1,6 +1,6 @@
 import telegame
 
-token = '469988448:AAESZWFUDbZj1u2Ar5BYWBalfxxKI2unKM4'
+token = ''
 
 games = {
     'checkers': {'name': 'Checkers', 'category': 'Strategic games'},
