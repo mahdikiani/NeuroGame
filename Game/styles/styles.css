@@ -1,0 +1,69 @@
+#shape {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: none;
+    position: relative;
+}
+
+#header {
+    
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    
+}
+
+h1 {
+    margin: -5px 0;
+}
+
+div#times {
+    background: #aaaaaa;
+}
+
+div.times {
+    float: left;
+    display: inline-flex;
+    min-width: 25%;
+}
+
+#lastTime {
+    padding-left: 12%;
+}
+
+#worstTime {
+    padding-right: 12%;
+}
+
+#resetButton {
+    text-align: center;
+    background: darkred;
+    color: white;
+}
+
+button {
+    background: blue;
+    color: white;
+    margin-top: 10px;
+}
+
+#content {
+    
+    min-height: calc(100vh - 25px);
+    
+}
+
+#footer {
+    
+    height: 25px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    
+}
+
+
