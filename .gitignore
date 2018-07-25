@@ -105,3 +105,8 @@ venv.bak/
 
 # secrets
 secret/
+
+# IDE
+.idea/
+.vscode/
+
