@@ -4,12 +4,23 @@ var start = now.getTime();
 var BetweenStimuliTime = 300;    
 var best = 100;
 var worst = 0;
+
+
+function right(){
+    window.alert("right");
+}
+
+
+function left(){
+    window.alert("left");
+}
+
            
 function makeShapeAppear() {
     var rand = Math.random();
 
     if (rand > 0.5){
-	    var topOffset = 200;
+	    var topOffset = 100;
 	    var leftOffset = 200;
 	    var red = 256;
 	    var blue = 0;
@@ -17,7 +28,7 @@ function makeShapeAppear() {
      }
 
     if (rand < 0.5){
-	    var topOffset = 200;
+	    var topOffset = 100;
 	    var leftOffset = 400;
 	    var red = 0;
 	    var blue = 256;
@@ -41,6 +52,11 @@ function appearAfterDelay() {
 }
 
 appearAfterDelay();
+
+
+
+
+
 document.getElementById('shape').onclick = function () {
 
     document.getElementById('shape').style.display = 'none';
