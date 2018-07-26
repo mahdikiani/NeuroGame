@@ -1,2 +1,2 @@
 # NeuroGame
-Games for oddball paradigm test launch in telegram
+Oddball task game launched in Telegram
