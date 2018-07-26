@@ -4,20 +4,10 @@ var start = now.getTime();
 var BetweenStimuliTime = 300;    
 var best = 100;
 var worst = 0;
-
-
-function right(){
-    window.alert("right");
-}
-
-
-function left(){
-    window.alert("left");
-}
-
-           
+var rand;
+// Appear Shapes           
 function makeShapeAppear() {
-    var rand = Math.random();
+    rand = Math.random();
 
     if (rand > 0.5){
 	    var topOffset = 100;
@@ -46,7 +36,7 @@ function makeShapeAppear() {
     start = new Date().getTime();
 }
 
-
+// Delay Function
 function appearAfterDelay() {
     setTimeout(makeShapeAppear, BetweenStimuliTime);
 }
@@ -54,10 +44,25 @@ function appearAfterDelay() {
 appearAfterDelay();
 
 
+// Keyboard Input Handle
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+	if(rand>0.5){endstimuli();}
+    }
+    else if(event.keyCode == 39) {
+	if(rand<0.5){endstimuli();}
+    }
+});
 
 
-
+// Touch/Click Input Handle
 document.getElementById('shape').onclick = function () {
+    endstimuli();
+};
+
+
+// Update after correct input
+function endstimuli(){
 
     document.getElementById('shape').style.display = 'none';
 
@@ -77,11 +82,6 @@ document.getElementById('shape').onclick = function () {
     document.getElementById('timeWorst').innerHTML = worst + 's';
 
     appearAfterDelay();
+}
 
-};
 
-// footer
-var year = now.getFullYear();
-var copyright = '&copy; ' + year + ' Larry Tooley';
-
-document.getElementById('copyright').innerHTML = copyright;
