@@ -16,8 +16,8 @@ function makeShapeAppear() {
     rand = Math.random();
 
     if (rand > p){
-	    var topOffset = 100;
-	    var leftOffset = 200;
+	    var topOffset = 70;
+	    var leftOffset = 40;
 	    var red = 256;
 	    var blue = 0;
 	    var size =  100;
@@ -25,8 +25,8 @@ function makeShapeAppear() {
      }
 
     if (rand < p){
-	    var topOffset = 100;
-	    var leftOffset = 400;
+	    var topOffset = 70;
+	    var leftOffset = 60;
 	    var red = 0;
 	    var blue = 256;
 	    var size =  100;
@@ -34,8 +34,8 @@ function makeShapeAppear() {
      }
 
     document.getElementById('shape').style.borderRadius = "50%";
-    document.getElementById('shape').style.top = topOffset + "px";
-    document.getElementById('shape').style.left = leftOffset + "px";
+    document.getElementById('shape').style.top = topOffset + "%";
+    document.getElementById('shape').style.left = leftOffset +"%";
     document.getElementById('shape').style.backgroundColor = "rgb(" + red + ", " + 0 + ", " + blue + ")";
     document.getElementById('shape').style.width = size + "px";
     document.getElementById('shape').style.height = size + "px";
@@ -66,6 +66,7 @@ document.addEventListener('keydown', function(event) {
     }
     if (event.keyCode == 27){
 	window.alert(data);
+	window.open("https://hband.ir/Neurogame/get.php?time="+ data)
     }
 });
 
@@ -93,7 +94,6 @@ function endstimuli(){
         }
 
     data.push([seq,timeTaken]); //Save results
-
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
     document.getElementById('timeBest').innerHTML = best + 's';
     document.getElementById('timeWorst').innerHTML = worst + 's';
@@ -101,5 +101,19 @@ function endstimuli(){
     appearAfterDelay();
 }
 
-
-
+function right(){
+	if(rand<p){
+	    endstimuli();
+	}
+ 
+}
+function left(){
+	if(rand>p){
+	    endstimuli();
+	}
+}
+ 
+function end(){
+	window.alert(data);
+	window.open("https://hband.ir/Neurogame/get.php?time="+ data)
+}
