@@ -17,7 +17,7 @@ function makeShapeAppear() {
 
     if (rand > p){
 	    var topOffset = 70;
-	    var leftOffset = 40;
+	    var leftOffset = 30;
 	    var red = 256;
 	    var blue = 0;
 	    var size =  100;
@@ -26,7 +26,7 @@ function makeShapeAppear() {
 
     if (rand < p){
 	    var topOffset = 70;
-	    var leftOffset = 60;
+	    var leftOffset = 70;
 	    var red = 0;
 	    var blue = 256;
 	    var size =  100;
