@@ -16,8 +16,9 @@ body::before {
     width: 100px;
     height: 100px;
     background-color: #157A6E;
-    display: none;
     position: relative;
+
+
 }
 
 button {
@@ -34,6 +35,14 @@ button {
     width: 100px;
     padding: 20px 10px;
 }
+
+
+.end-button {
+    background: #499F68;
+    width: 100px;
+    padding: 20px 10px;
+}
+
 
 #header {
     background: #157A6E;
@@ -61,7 +70,6 @@ div.text {
     max-width: 50%;
     margin: 50px;
     
-
 }
 
 #lastTime {
@@ -84,7 +92,7 @@ div.text {
 
 #footer {
     padding-top: 10px;
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     position:fixed;
     bottom:0;
     width:100%;

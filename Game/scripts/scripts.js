@@ -62,7 +62,6 @@ document.addEventListener('keydown', function (event) {
         }
     }
     if (event.keyCode == 27) {
-        window.alert(data);
         window.open("https://hband.ir/Neurogame/get.php?time=" + data)
     }
 });
@@ -112,6 +111,5 @@ function left() {
 }
 
 function end() {
-    window.alert(data);
     window.open("https://hband.ir/Neurogame/get.php?time=" + data)
 }
