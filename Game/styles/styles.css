@@ -1,23 +1,48 @@
+body::before {
+    z-index: -1;
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../pattern.jpg');
+    opacity: 0.5;
+}
+
 #shape {
     width: 100px;
     height: 100px;
-    background-color: red;
+    background-color: #157A6E;
     display: none;
     position: relative;
 }
 
+button {
+    background: #499F68;
+    color: white;
+    border: solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+.act-button {
+    width: 100px;
+    padding: 20px 10px;
+}
+
 #header {
-    
-    background: black;
+    background: #157A6E;
     color: white;
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    
 }
 
 h1 {
-    margin: -5px 0;
+    margin: 0;
 }
 
 div#times {
@@ -44,30 +69,19 @@ div.times {
     color: white;
 }
 
-button {
-    background: blue;
-    color: white;
-    margin-top: 10px;
-}
-
 #content {
-    
     min-height: calc(100vh - 25px);
-    
 }
 
 #footer {
-    
     height: 25px;
     padding-top: 4px;
     text-align: center;
     background-color: black;
     color: white;
-    
 }
 
 .responsive {
     width: 10%;
     height: 10%;
 }
-
