@@ -18,6 +18,7 @@
         <div id="header" role="heading">
             <h1>NeuroGame</h1>
         </div>
+
         <div id="times">
             <center>
                 <div class="times" id="lastTime">Last:
@@ -31,39 +32,26 @@
                 </div>
             </center>
         </div>
-        <br>
-        <br>
         <center>
-            <h4> Press ESC or END button to end game </h4>
-            <br>
-            <br>
-            <button class="act-button" onclick="left()">
-                <i class="fas fa-chevron-left"></i>
-                <!--<img src="left.png" class="responsive">-->
-            </button>
-            <button onClick="end()">END</button>
-            <button class="act-button" onclick="right()">
-                <i class="fas fa-chevron-right"></i>
-                <!--<img src="right.png" class="responsive">-->
-            </button>
-
-
+            <div class="text"><h4> Press ESC or END button to end game </h4></div>
         </center>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <div id="shape"></div>
-        <br>
+        <div id="footer">
+            <center>
+                <button class="act-button" onclick="left()">
+                <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="end()">END</button>
+                <button class="act-button" onclick="right()">
+                <i class="fas fa-chevron-right"></i>
+                </button>
+             </center>    
+        </div>
     </div>
-    <br>
 
     <!-- Javascript -->
     <script type="text/javascript" src="scripts/scripts.js"></script>
     <script src="https://telegram.org/js/games.js"></script>
 
 </body>
-
 </html>

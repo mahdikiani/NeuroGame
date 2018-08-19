@@ -1,12 +1,4 @@
-@media (orientation: portrait) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
+
 
 body::before {
     z-index: -1;
@@ -17,7 +9,7 @@ body::before {
     left: 0;
     right: 0;
     background: url('../pattern.jpg');
-    opacity: 0.5;
+    opacity: 0.5;	
 }
 
 #shape {
@@ -65,6 +57,13 @@ div.times {
     min-width: 25%;
 }
 
+div.text {
+    max-width: 50%;
+    margin: 50px;
+    
+
+}
+
 #lastTime {
     padding-left: 12%;
 }
@@ -84,11 +83,11 @@ div.times {
 }
 
 #footer {
-    height: 25px;
-    padding-top: 4px;
-    text-align: center;
-    background-color: black;
-    color: white;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    position:fixed;
+    bottom:0;
+    width:100%;
 }
 
 .responsive {
