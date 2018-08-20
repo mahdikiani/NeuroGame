@@ -11,9 +11,16 @@ var data = [];
 var seq;
 
 var rand;
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
 // Appear Shapes           
 function makeShapeAppear() {
     rand = Math.random();
+
+
 
     if (rand > p) {
         var topOffset = 70;
@@ -31,13 +38,13 @@ function makeShapeAppear() {
         seq = 1;
     }
 
-    document.getElementById('shape').style.borderRadius = "50%";
-    document.getElementById('shape').style.top = topOffset + "%";
-    document.getElementById('shape').style.left = leftOffset + "%";
-    document.getElementById('shape').style.backgroundColor = bgcolor;
-    document.getElementById('shape').style.width = size + "px";
-    document.getElementById('shape').style.height = size + "px";
-    document.getElementById('shape').style.display = 'block';
+    // document.getElementById('shape').style.borderRadius = "50%";
+    // document.getElementById('shape').style.top = topOffset + "%";
+    // document.getElementById('shape').style.left = leftOffset + "%";
+    // document.getElementById('shape').style.backgroundColor = bgcolor;
+    // document.getElementById('shape').style.width = size + "px";
+    // document.getElementById('shape').style.height = size + "px";
+    // document.getElementById('shape').style.display = 'block';
 
     start = new Date().getTime();
 }
@@ -68,7 +75,7 @@ document.addEventListener('keydown', function (event) {
 
 
 // Touch/Click Input Handle
-document.getElementById('shape').onclick = function () {
+document.getElementsByClassName('shape').onclick = function () {
     endstimuli();
 };
 
@@ -76,7 +83,7 @@ document.getElementById('shape').onclick = function () {
 // Update after correct input
 function endstimuli() {
 
-    document.getElementById('shape').style.display = 'none';
+    document.getElementsByClassName('shape').style.display = 'none';
 
     var end = new Date().getTime(),
         timeTaken = (end - start) / 1000;

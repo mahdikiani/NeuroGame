@@ -18,10 +18,8 @@
         <div id="header" role="heading">
             <h1>NeuroGame</h1>
         </div>
-
         <div id="times">
-            <button class="end-button" onclick="end()">END</button>
-            <center>
+            <div>
                 <div class="times" id="lastTime">Last:
                     <span id="timeTaken"></span>
                 </div>
@@ -31,24 +29,37 @@
                 <div class="times" id="worstTime">Worst:
                     <span id="timeWorst"></span>
                 </div>
-            </center>
+            </div>
+            <div class="end-button" onclick="end()">
+                <i class="far fa-times-circle"></i>
+            </div>
         </div>
-        <center>
+        <div>
             <div class="text">
                 <h4> Press ESC or END button to end game </h4>
             </div>
-        </center>
-        <div id="shape"></div>
+        </div>
+        <div id="" class="container">
+            <div class="col-md-6 left">
+                <div class="left-ball shape"></div>
+            </div>
+            <div class="col-md-6 right">
+                <div class="right-ball shape"></div>
+            </div>
+        </div>
         <div id="footer">
-            <center>
-                <button class="act-button" onclick="left()">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="act-button" onclick="right()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </center>
-
+            <div class="container">
+                <div class="col-md-6 left ">
+                    <button class="act-button" onclick="left()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+                <div class="col-md-6 right">
+                    <button class="act-button" onclick="right()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
