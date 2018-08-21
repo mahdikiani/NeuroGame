@@ -108,7 +108,7 @@ function end() {
             document.getElementById("score").innerHTML = this.responseText;
         }
     };
-    xhttp.open("GET", "get.php?time=" + data, true);
+    xhttp.open("GET", "get.php?date=" + now + "&time=" + data, true);
     xhttp.send();
 
     // window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
