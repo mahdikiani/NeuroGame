@@ -106,10 +106,18 @@ function end() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("score").innerHTML = this.responseText;
+            now = new Date();
+            start = now.getTime();
+
+            best = 100;
+            worst = 0;
+            score = 0;
+            data = [];
+
+            document.getElementById("score").innerHTML = score;
         }
     };
-    xhttp.open("GET", "get.php?date=" + now + "&time=" + data, true);
+    xhttp.open("GET", "get.php?date=" + now + "&time=" + JSON.stringify(data), true);
     xhttp.send();
 
     // window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
