@@ -2,7 +2,7 @@ var now = new Date();
 var start = now.getTime();
 
 
-var BetweenStimuliTime = 300;
+var BetweenStimuliTime = 10;
 var p = 0.5;
 
 var best = 100;
@@ -10,7 +10,8 @@ var worst = 0;
 var data = [];
 var seq;
 
-var rand;
+var ball;
+var shapes;
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -18,25 +19,12 @@ function getRandomInt(max) {
 
 // Appear Shapes           
 function makeShapeAppear() {
-    rand = Math.random();
+    ball = getRandomInt(2);
+    shapes = document.getElementsByClassName('shape');
 
+    shapes[1 - ball].style.display = 'Block';
+    shapes[ball].style.display = 'None';
 
-
-    if (rand > p) {
-        var topOffset = 70;
-        var leftOffset = 30;
-        var bgcolor = '#D81C2B';
-        var size = 100;
-        seq = 0;
-    }
-
-    if (rand < p) {
-        var topOffset = 70;
-        var leftOffset = 70;
-        var bgcolor = '#88CCF1';
-        var size = 100;
-        seq = 1;
-    }
 
     // document.getElementById('shape').style.borderRadius = "50%";
     // document.getElementById('shape').style.top = topOffset + "%";
@@ -60,11 +48,11 @@ appearAfterDelay();
 // Keyboard Input Handle
 document.addEventListener('keydown', function (event) {
     if (event.keyCode == 37) {
-        if (rand > p) {
+        if (ball == 1) {
             endstimuli();
         }
     } else if (event.keyCode == 39) {
-        if (rand < p) {
+        if (ball == 0) {
             endstimuli();
         }
     }
@@ -83,7 +71,7 @@ document.getElementsByClassName('shape').onclick = function () {
 // Update after correct input
 function endstimuli() {
 
-    document.getElementsByClassName('shape').style.display = 'none';
+    shapes[ball].style.display = 'none';
 
     var end = new Date().getTime(),
         timeTaken = (end - start) / 1000;
@@ -105,14 +93,14 @@ function endstimuli() {
 }
 
 function right() {
-    if (rand < p) {
+    if (ball == 0) {
         endstimuli();
     }
 
 }
 
 function left() {
-    if (rand > p) {
+    if (ball == 1) {
         endstimuli();
     }
 }
