@@ -7,6 +7,7 @@ var p = 0.5;
 
 var best = 100;
 var worst = 0;
+var score = 0;
 var data = [];
 var seq;
 
@@ -55,7 +56,7 @@ document.addEventListener('keydown', function (event) {
         }
     }
     if (event.keyCode == 27) {
-        window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
+        end();
     }
 });
 
@@ -76,11 +77,13 @@ function endstimuli() {
 
     worst = Math.max(timeTaken, worst);
     best = Math.min(timeTaken, best);
+    score += 1 / timeTaken;
 
     data.push([seq, timeTaken]); //Save results
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
     document.getElementById('timeBest').innerHTML = best + 's';
     document.getElementById('timeWorst').innerHTML = worst + 's';
+    document.getElementById('score').innerHTML = Math.round(score, 2);
 
     appearAfterDelay();
 }
@@ -99,12 +102,21 @@ function left() {
 }
 
 function end() {
-    window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("score").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "get.php?time=" + data, true);
+    xhttp.send();
+
+    // window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
 }
 
 function init() {
-    // container = document.getElementsByClassName('container')[0];
-    // container.style.top = 0;
+    container = document.getElementsByClassName('container')[0];
+    container.style.paddingTop = window.screen.availHeight * .1 + 'px';;
     // container.style.left = 0;
     // container.style.bottom = window.screen.height + 'px';
     // container.style.right = window.screen.width + 'px';

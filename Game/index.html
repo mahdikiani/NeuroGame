@@ -18,7 +18,7 @@
         <div id="header" role="heading">
             <h1>NeuroGame</h1>
         </div>
-        <div id="times">
+        <div id="times" style="display: none;">
             <div>
                 <div class="times" id="lastTime">Last:
                     <span id="timeTaken"></span>
@@ -31,8 +31,13 @@
                 </div>
             </div>
         </div>
-        <div class="end-button" onclick="end()">
-            <i class="far fa-times-circle"></i>
+        <div>
+            <div id="score" class="left">
+
+            </div>
+            <div class="end-button" onclick="end()">
+                <i class="far fa-times-circle"></i>
+            </div>
         </div>
         <!-- <div>
             <div class="text">

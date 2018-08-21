@@ -55,7 +55,7 @@ body::before {
 .left-ball {
     margin: 0 auto;
     width: 100px;
-    background: #D81C2B;
+    background: #ff2b3c;
     border-radius: 50%;
     display: block;
 }
@@ -116,6 +116,18 @@ div.text {
 
 #content {
     min-height: calc(100vh - 25px);
+}
+
+#score {
+    color: #157A6E;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    font-size: 32px;
+    padding: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 #footer {
