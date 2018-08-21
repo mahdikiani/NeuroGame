@@ -21,6 +21,7 @@ function getRandomInt(max) {
 // Appear Shapes           
 function makeShapeAppear() {
     ball = getRandomInt(2);
+    seq = ball;
     shapes = document.getElementsByClassName('shape');
 
     shapes[1 - ball].style.display = 'Block';
