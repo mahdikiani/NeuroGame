@@ -106,5 +106,5 @@ function left() {
 }
 
 function end() {
-    window.open("https://hband.ir/Neurogame/get.php?time=" + data)
+    window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
 }
