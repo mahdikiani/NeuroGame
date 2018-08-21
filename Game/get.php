@@ -19,7 +19,7 @@
         </div>
         <center>
             <p> Thank you for playing </p>
-            <a href = "index.html"><button onclick="index.html">NEW GAME</button></a>
+            <a href = "index.html" ><button class="act-button" onclick="index.html">NEW GAME</button></a>
         </center>
 </body>
 </html>

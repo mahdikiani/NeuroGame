@@ -42,8 +42,6 @@ function appearAfterDelay() {
     setTimeout(makeShapeAppear, BetweenStimuliTime);
 }
 
-appearAfterDelay();
-
 
 // Keyboard Input Handle
 document.addEventListener('keydown', function (event) {
@@ -63,9 +61,9 @@ document.addEventListener('keydown', function (event) {
 
 
 // Touch/Click Input Handle
-document.getElementsByClassName('shape').onclick = function () {
-    endstimuli();
-};
+// document.getElementsByClassName('shape').onclick = function () {
+//     endstimuli();
+// };
 
 
 // Update after correct input
@@ -73,16 +71,11 @@ function endstimuli() {
 
     shapes[ball].style.display = 'none';
 
-    var end = new Date().getTime(),
-        timeTaken = (end - start) / 1000;
+    var end = new Date().getTime();
+    var timeTaken = (end - start) / 1000;
 
-    if (timeTaken > worst) {
-        worst = timeTaken;
-    }
-
-    if (timeTaken < best) {
-        best = timeTaken;
-    }
+    worst = Math.max(timeTaken, worst);
+    best = Math.min(timeTaken, best);
 
     data.push([seq, timeTaken]); //Save results
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
@@ -108,3 +101,16 @@ function left() {
 function end() {
     window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
 }
+
+function init() {
+    // container = document.getElementsByClassName('container')[0];
+    // container.style.top = 0;
+    // container.style.left = 0;
+    // container.style.bottom = window.screen.height + 'px';
+    // container.style.right = window.screen.width + 'px';
+    // container.style.position = 'fixed';
+    appearAfterDelay();
+
+}
+
+init();
