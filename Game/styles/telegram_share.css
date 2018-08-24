@@ -1,0 +1,143 @@
+.overlay {
+    overflow: hidden;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.overlay::before {
+    z-index: -1;
+    content: ' ';
+    background: gray;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.popup {
+    z-index: 10;
+    background: white;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 10px;
+    max-width: 500px;
+    text-align: center;
+}
+
+@media (max-width: 520px) {
+    .popup {
+        margin: 50px 10px;
+    }
+}
+
+.username {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.score {
+    color: #157A6E;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    padding: 3px 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 -10px 20px -10px;
+    border-bottom: 2px solid #5ac546;
+}
+
+.bottom-controls {
+    background: #499F68;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    font-size: 32px;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    color: white;
+    padding-left: 3px;
+}
+
+.play {
+    vertical-align: middle;
+}
+
+.this-share {
+    padding: 0 20px;
+}
+
+@media (max-width: 400px) {
+    .this-share {
+        padding: 0;
+    }
+}
+
+.challenge-friends.on-telegram {
+    margin: 10px auto;
+    padding: 15px 20px;
+    width: 100%;
+    /* line-height: 85px; */
+    opacity: 1;
+    /* font-weight: bold; */
+    border: none;
+    color: white;
+    /* height: 85px; */
+    display: flex;
+    /* flex-flow: column;
+    align-items: center;
+    justify-content: center; */
+    position: relative;
+    background-color: #5ac546;
+    background-repeat: no-repeat;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #41a5e0;
+    color: white;
+}
+
+.telegram-share {
+    font-size: 32px;
+    padding-top: 8px;
+}
+
+.challenge-friends.on-telegram .title {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.challenge-friends .yourHighscore {
+    text-transform: initial;
+    font-weight: 400;
+    font-size: 20px;
+    display: none;
+}
+
+.share-data {
+    padding-left: 20px;
+    margin: auto;
+}
