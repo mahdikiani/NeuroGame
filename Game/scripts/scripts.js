@@ -1,8 +1,8 @@
 var now = new Date();
 var start = now.getTime();
 
-
-var BetweenStimuliTime = 10;
+var max_showing_ball = 10;
+var BetweenStimuliTime = 100;
 var p = 0.5;
 
 var best = 100;
@@ -14,6 +14,9 @@ var seq;
 var ball;
 var shapes;
 
+var game_state = 'stop';
+var ball_to_end = max_showing_ball;
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
@@ -21,6 +24,7 @@ function getRandomInt(max) {
 // Appear Shapes           
 function makeShapeAppear() {
     ball = getRandomInt(2);
+    ball_to_end -= 1;
     seq = ball;
     shapes = document.getElementsByClassName('shape');
 
@@ -41,19 +45,24 @@ function makeShapeAppear() {
 
 // Delay Function
 function appearAfterDelay() {
-    setTimeout(makeShapeAppear, BetweenStimuliTime);
+    if (ball_to_end > 0)
+        setTimeout(makeShapeAppear, BetweenStimuliTime);
+    else
+        end();
 }
 
 
 // Keyboard Input Handle
 document.addEventListener('keydown', function (event) {
-    if (event.keyCode == 37) {
-        if (ball == 1) {
-            endstimuli();
-        }
-    } else if (event.keyCode == 39) {
-        if (ball == 0) {
-            endstimuli();
+    if (game_state == 'run') {
+        if (event.keyCode == 37) {
+            if (ball == 1) {
+                endstimuli();
+            }
+        } else if (event.keyCode == 39) {
+            if (ball == 0) {
+                endstimuli();
+            }
         }
     }
     if (event.keyCode == 27) {
@@ -120,18 +129,36 @@ function end() {
     xhttp.open("GET", "get.php?date=" + now + "&time=" + JSON.stringify(data), true);
     xhttp.send();
 
+    game_state = 'stop';
+    init();
+
     // window.open("https://hband.ir/Neurogame/Game/get.php?time=" + data)
 }
 
 function init() {
-    container = document.getElementsByClassName('container')[0];
-    container.style.paddingTop = window.screen.availHeight * .1 + 'px';;
+    // container = document.getElementsByClassName('container')[0];
+    // container.style.paddingTop = window.screen.availHeight * .1 + 'px';;
+    if (game_state == 'run') {
+        document.getElementById('overlay-end').style.display = 'none';
+    } else {
+        document.getElementById('overlay-end').style.display = 'block';
+    }
+
     // container.style.left = 0;
     // container.style.bottom = window.screen.height + 'px';
     // container.style.right = window.screen.width + 'px';
     // container.style.position = 'fixed';
-    appearAfterDelay();
+}
 
+function start_game() {
+    ball_to_end = max_showing_ball;
+    game_state = 'run';
+    best = 100;
+    worst = 0;
+    score = 0;
+    data = [];
+    init();
+    appearAfterDelay();
 }
 
 init();

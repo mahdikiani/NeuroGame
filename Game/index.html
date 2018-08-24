@@ -34,17 +34,16 @@
         </div>
         <div>
             <div id="score" class="left">
-
             </div>
             <div class="end-button" onclick="end()">
                 <i class="far fa-times-circle"></i>
             </div>
         </div>
         <!-- <div>
-            <div class="text">
-                <h4> Press ESC or END button to end game </h4>
-            </div>
-        </div> -->
+        <div class="text">
+            <h4> Press ESC or END button to end game </h4>
+        </div>
+    </div> -->
         <div id="" class="container">
             <div class="col-md-6 left">
                 <div id="left-ball" class="left-ball shape hide"></div>
@@ -68,46 +67,9 @@
             </div>
         </div>
     </div>
-
     <div class="overlay visible" id="overlay-end">
-
         <div class="popup">
-
             <div class="ranks-wrap visible">
-
-                <div class="card card-ban hide">
-                    <div class="cell">
-                        <img src="../detail/assets/svg/ic-ban-red-40.svg" alt="Ban alert" class="alert-icon">
-
-                        <div class="infoWrap">
-                            <h2 class="headline">You are banned for 24 hours</h2>
-                            <p class="text">During this period your scores won’t save</p>
-                        </div>
-
-                        <span class="ic ic-info banDialog_open"></span>
-                    </div>
-                </div>
-
-                <div class="card card-subscribe hide">
-                    <div class="cell">
-                        <div class="cover telegram"></div>
-
-                        <div class="infoWrap">
-                            <h2 class="botName">GAMEE bot</h2>
-                            <p class="text">
-                                <span class="badge badge-error">3</span> new games</p>
-                        </div>
-
-                        <div class="buttons">
-                            <a href="https://telegram.me/gamee?start=eyJ0eXBlIjoic3Vic2NyaWJlIiwiY29kZSI6Im9GZlcyb21pVyJ9" data-type="telegram" class="subscribe-btn on-telegram subscribeBotClicked">
-                                Follow
-                            </a>
-
-
-                        </div>
-                    </div>
-                </div>
-
                 <div class="tab-nav">
                     <div class="tab-link active">
                         <div class="name">
@@ -115,110 +77,58 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="tabs">
-                    <div class="tab tab-secondary-rankings">
-                        <div class="rankings secondary-rankings visible" id="secondaryRanks">
-                            <div class="card-controls" data-control="gameoverRankings">
-                                <div class="control control-left" data-dir="left"></div>
-                                <div class="control control-right" data-dir="right"></div>
-                            </div>
-
-                            <div class="scrollArea">
-                                <div class="items"></div>
-                            </div>
-
-                            <div class="rankingsFailed" style="display: none;">
-                                <p>Failed to load leaderboards</p>
-                                <a class="btn-reload" title="Reload">
-                                    <span class="ic ic-reload"></span> Reload</a>
-                            </div>
-
-                            <div class="spinner ranksLoading" style="display: none;"></div>
-                        </div>
-
-                        <div class="this-share hide ">
-
-                            <a title="Send game" class="challenge-friends on-telegram" data-type="telegram" data-screen="gameover">
-                                <span class="title">Send game</span>
-                                <span class="yourHighscore" style="display: inline;">Your highscore:
-                                    <span class="myCurrentScore">215</span>
-                                </span>
-                            </a>
-
-
-
-
-                        </div>
-                    </div>
-
                     <div class="tab tab-rankings visible">
-
-
-
                         <div class="rankings leaderboards visible vsMode " id="leaderboardsRanks">
-                            <div class="card-controls" data-control="gameoverRankings">
-                                <div class="control control-left" data-dir="left"></div>
-                                <div class="control control-right" data-dir="right"></div>
-                            </div>
-
-                            <div class="scrollArea">
-                                <div class="items">
-                                    <div class="item me">
-                                        <div class="pic_wrap">
-                                            <span class="crown show">👑</span>
-                                            <div class="avatar-wrap loaded">
-                                                <img class="pic defImg" onerror="this.style.display='none'" src="images/ic-empty-user.svg">
-                                            </div>
-                                        </div>
-                                        <div class="username">
-                                            <span>You</span>
-                                        </div>
+                            <div class="container scoreboard">
+                                <div class="pic_wrap left col-md-12">
+                                    <div class="avatar-wrap ">
+                                        <span class="crown show">👑</span>
+                                        <img class="pic defImg" onerror="this.style.display='none'" src="images/ic-empty-user.svg">
+                                    </div>
+                                </div>
+                                <div class="detail-score col-md-6 left">
+                                    <!--<div class="username">
+                                        <span>You</span>
+                                    </div>-->
+                                    <div>
+                                        <span class="username">Score:</span>
                                         <div class="score">215</div>
                                     </div>
-
-
+                                </div>
+                                <div class="detail-score col-md-6 right">
+                                    <div>
+                                        <span class="username">Highscore:</span>
+                                        <div class="highscore">315</div>
+                                    </div>
                                 </div>
                             </div>
-
-
                         </div>
-
-                        <div class="this-share visible">
-
-                            <a title="Send game" class="challenge-friends on-telegram" data-type="telegram" data-screen="gameover">
-                                <span class="telegram-share">
-                                    <i class="fab fa-telegram-plane"></i>
-                                </span>
-                                <div class="share-data">
-                                    <span class="title">Send game</span>
-                                    <br>
-                                    <span class="yourHighscore" style="display: inline;">Your highscore:
-                                        <span class="myCurrentScore">215</span>
-                                    </span>
-                                </div>
-                            </a>
-
+                        <div class="container bottom-buttons">
+                            <div class="left col-md-6">
+                                <a href="#" onclick="start_game()">
+                                    <div class="bottom-controls">
+                                        <i class="fas fa-play play"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="right col-md-6">
+                                <a href="https://telegram.me/btgamebot?game=Alzheimer">
+                                    <div title="Send game" class="bottom-controls challenge-friends on-telegram" data-type="telegram" data-screen="gameover">
+                                        <i class="fab fa-telegram-plane telegram-share play"></i>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-            </div>
-
-
-
-            <div class="bottom-controls">
-                <i class="fas fa-play play"></i>
             </div>
         </div>
     </div>
 
-
     <!-- Javascript -->
     <script type="text/javascript" src="scripts/scripts.js"></script>
     <script src="https://telegram.org/js/games.js"></script>
-
 </body>
 
 </html>
