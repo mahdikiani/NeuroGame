@@ -161,6 +161,8 @@ function init() {
         document.getElementById('overlay-end').style.display = 'none';
     } else {
         document.getElementById('overlay-end').style.display = 'block';
+        document.getElementById('left-ball').style.display = 'none';
+        document.getElementById('right-ball').style.display = 'none';
     }
 
     // container.style.left = 0;
@@ -176,8 +178,10 @@ function start_game() {
     worst = 0;
     score = 0;
     data = [];
+    now = new Date();
+    start = now.getTime();
     init();
-    appearAfterDelay();
+    makeShapeAppear();
 }
 
 init();
