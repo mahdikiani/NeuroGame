@@ -7,7 +7,8 @@ var p = 0.5;
 
 var best = 100;
 var worst = 0;
-var score = 0;
+var score = 0,
+    highscore = 0;
 var data = [];
 var seq;
 
@@ -129,6 +130,8 @@ function end() {
     xhttp.open("GET", "get.php?date=" + now + "&time=" + JSON.stringify(data), true);
     xhttp.send();
 
+    highscore = max(highscore, score);
+
     game_state = 'stop';
     init();
 
@@ -138,6 +141,9 @@ function end() {
 function init() {
     // container = document.getElementsByClassName('container')[0];
     // container.style.paddingTop = window.screen.availHeight * .1 + 'px';;
+    document.getElementsByClassName('score')[0].innerText = score;
+    document.getElementsByClassName('highscore')[0].innerText = highscore;
+
     if (game_state == 'run') {
         document.getElementById('overlay-end').style.display = 'none';
     } else {
