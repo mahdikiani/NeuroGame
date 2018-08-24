@@ -31,7 +31,7 @@ def button(bot: telegram.bot.Bot, update):
     # bot.answer_callback_query(query.message.chat_id)
     if not query.game_short_name:
         inline_keyboard = [
-            [InlineKeyboardButton(text="Play", callback_game=json.dumps({'game_short_name': "Alzheimer"})),
+            [InlineKeyboardButton(text="Play Alzheimer", callback_game=json.dumps({'game_short_name': "Alzheimer"})),
              InlineKeyboardButton(text="Share", url="https://telegram.me/btgamebot?game=Alzheimer")]]
 
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
