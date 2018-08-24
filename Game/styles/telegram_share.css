@@ -92,6 +92,10 @@
     padding-left: 3px;
 }
 
+.bottom-controls:hover {
+    cursor: pointer;
+}
+
 .bottom-controls:active {
     background: #3e8759;
 }
