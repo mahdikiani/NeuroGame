@@ -92,6 +92,10 @@
     padding-left: 3px;
 }
 
+.bottom-controls:active {
+    background: #3e8759;
+}
+
 .play {
     vertical-align: middle;
 }
@@ -105,6 +109,10 @@
 .challenge-friends.on-telegram {
     background-color: #41a5e0;
     color: white;
+}
+
+.challenge-friends.on-telegram:active {
+    background: #338cc1;
 }
 
 .telegram-share {

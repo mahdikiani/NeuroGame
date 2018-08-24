@@ -2,7 +2,8 @@ var now = new Date();
 var start = now.getTime();
 
 var max_showing_ball = 10;
-var BetweenStimuliTime = 100;
+var BetweenStimuliTime = 300;
+var BetweenActTime = 100;
 var p = 0.5;
 
 var best = 100;
@@ -21,6 +22,25 @@ var ball_to_end = max_showing_ball;
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
+
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+        var context = this,
+            args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        if (!timeout) {
+            // clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        }
+        if (callNow) func.apply(context, args);
+    };
+};
 
 // Appear Shapes           
 function makeShapeAppear() {
@@ -57,13 +77,10 @@ function appearAfterDelay() {
 document.addEventListener('keydown', function (event) {
     if (game_state == 'run') {
         if (event.keyCode == 37) {
-            if (ball == 1) {
-                endstimuli();
-            }
+            act_debounce(1);
+
         } else if (event.keyCode == 39) {
-            if (ball == 0) {
-                endstimuli();
-            }
+            act_debounce(0);
         }
     }
     if (event.keyCode == 27) {
@@ -99,18 +116,14 @@ function endstimuli() {
     appearAfterDelay();
 }
 
-function right() {
-    if (ball == 0) {
-        endstimuli();
-    }
-
-}
-
-function left() {
-    if (ball == 1) {
+function do_act(act) {
+    if (ball == act) {
         endstimuli();
     }
 }
+
+var act_debounce = debounce(do_act, BetweenActTime, true);
+
 
 function end() {
     var xhttp = new XMLHttpRequest();

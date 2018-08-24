@@ -26,6 +26,10 @@ body::before {
     font-family: sans-serif;
 }
 
+.act-button:active {
+    background: #3e8759;
+}
+
 .act-button:hover,
 .end-button:hover {
     cursor: pointer;
