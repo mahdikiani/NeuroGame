@@ -17,12 +17,13 @@ logger = logging.getLogger(__name__)
 
 
 def start(bot, update):
-    keyboard = [[InlineKeyboardButton("Play game!", callback_data='1'),
-                 InlineKeyboardButton("Share", callback_data='2')]]
+    # keyboard = [[InlineKeyboardButton("Play game!", callback_data='1'),
+    #              InlineKeyboardButton("Share", callback_data='2')]]
 
-    reply_markup = InlineKeyboardMarkup(keyboard)
+    # reply_markup = InlineKeyboardMarkup(keyboard)
 
-    update.message.reply_text('Please choose:', reply_markup=reply_markup)
+    # update.message.reply_text('Please choose:', reply_markup=reply_markup)
+    button(bot, update)
 
 
 def button(bot: telegram.bot.Bot, update):
