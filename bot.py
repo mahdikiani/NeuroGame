@@ -47,7 +47,7 @@ def button(bot: telegram.bot.Bot, update):
         # bot.answerCallbackQuery(cq.id, undefined, false, {url: "URL_DE_NUESTO_JUEGO"});
         bot.answer_callback_query(callback_query_id=query.id,
                                   text='salam',
-                                  url=f'https://hband.ir/game.html?id={query.id}')
+                                  url=f'https://hband.ir/Neurogame/Game/?id={query.id}')
         # bot.send_message(text='salam', chat_id=query.message.chat_id, )
 
 
