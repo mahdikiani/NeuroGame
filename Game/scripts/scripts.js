@@ -130,7 +130,7 @@ function end() {
     xhttp.open("GET", "get.php?date=" + now + "&time=" + JSON.stringify(data), true);
     xhttp.send();
 
-    highscore = max(highscore, score);
+    highscore = Math.max(highscore, score);
 
     game_state = 'stop';
     init();
