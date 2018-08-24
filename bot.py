@@ -36,7 +36,7 @@ def button(bot: telegram.bot.Bot, update):
              InlineKeyboardButton(text="Share", url="https://telegram.me/btgamebot?game=Alzheimer")]]
 
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        bot.send_game(chat_id=query.message.chat_id,
+        bot.send_game(chat_id=update.message.chat_id,
                       game_short_name='Alzheimer',
                       reply_markup=reply_markup,
                       )
