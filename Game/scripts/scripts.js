@@ -141,8 +141,8 @@ function end() {
 function init() {
     // container = document.getElementsByClassName('container')[0];
     // container.style.paddingTop = window.screen.availHeight * .1 + 'px';;
-    document.getElementsByClassName('score')[0].innerText = score;
-    document.getElementsByClassName('highscore')[0].innerText = highscore;
+    document.getElementsByClassName('score')[0].innerText = Math.round(score, 2);
+    document.getElementsByClassName('highscore')[0].innerText = Math.round(highscore, 2);
 
     if (game_state == 'run') {
         document.getElementById('overlay-end').style.display = 'none';
