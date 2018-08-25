@@ -11,6 +11,7 @@ var worst = 0;
 var score = 0,
     highscore = 0;
 var data = [];
+var this_ball_data = [];
 var seq;
 
 var ball;
@@ -107,7 +108,8 @@ function endstimuli() {
     best = Math.min(timeTaken, best);
     score += 1 / timeTaken;
 
-    data.push([seq, timeTaken]); //Save results
+    data.push([seq, this_ball_data]); //Save results
+    this_ball_data = [];
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
     document.getElementById('timeBest').innerHTML = best + 's';
     document.getElementById('timeWorst').innerHTML = worst + 's';
@@ -117,6 +119,7 @@ function endstimuli() {
 }
 
 function do_act(act) {
+    this_ball_data.push(timeTaken);
     if (ball == act) {
         endstimuli();
     }
@@ -126,6 +129,9 @@ var act_debounce = debounce(do_act, BetweenActTime, true);
 
 
 function end() {
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -140,7 +146,12 @@ function end() {
             document.getElementById("score").innerHTML = score;
         }
     };
-    xhttp.open("GET", "get.php?date=" + now + "&time=" + JSON.stringify(data), true);
+    xhttp.open("GET",
+        "get.php?date=" + now +
+        "&data=" + JSON.stringify(data) +
+        // "&tg=" + url.searchParams.get("c") +
+        "&id=" + url.searchParams.get("id"),
+        true);
     xhttp.send();
 
     highscore = Math.max(highscore, score);

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>NeuroGame</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
@@ -11,7 +11,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/telegram_share.css">
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/brain.png">
 </head>
 
 <body>
@@ -115,11 +115,11 @@
                                 </div>
                             </div>
                             <div class="right col-md-6">
-                                <a href="https://telegram.me/btgamebot?game=Alzheimer">
+                                <div onclick="TelegramGameProxy.shareScore()" href="https://telegram.me/btgamebot?game=Alzheimer">
                                     <div title="Send game" class="bottom-controls challenge-friends on-telegram" data-type="telegram" data-screen="gameover">
                                         <i class="fab fa-telegram-plane telegram-share play"></i>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
