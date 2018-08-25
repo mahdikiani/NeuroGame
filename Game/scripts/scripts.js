@@ -149,8 +149,8 @@ function end() {
     xhttp.open("GET",
         "get.php?date=" + now +
         "&data=" + JSON.stringify(data) +
-        // "&tg=" + url.searchParams.get("c") +
-        "&id=" + url.searchParams.get("id"),
+        "&id=" + url.searchParams.get("id") +
+        "&tg=" + TelegramGameProxy.initParams.tgShareScoreUrl,
         true);
     xhttp.send();
 
