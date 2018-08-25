@@ -150,6 +150,7 @@ function end() {
         "get.php?date=" + now +
         "&data=" + JSON.stringify(data) +
         "&id=" + url.searchParams.get("id") +
+        "&chat-id=" + url.searchParams.get("chat-id") +
         "&tg=" + TelegramGameProxy.initParams.tgShareScoreUrl,
         true);
     xhttp.send();
