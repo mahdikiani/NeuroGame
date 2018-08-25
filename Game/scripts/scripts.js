@@ -1,7 +1,7 @@
 var now = new Date();
 var start = now.getTime();
 
-var max_showing_ball = 10;
+var max_showing_ball = 60;
 var BetweenStimuliTime = 300;
 var BetweenActTime = 100;
 var p = 0.5;
@@ -19,6 +19,7 @@ var shapes;
 
 var game_state = 'stop';
 var ball_to_end = max_showing_ball;
+var appearTimeout;
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -34,7 +35,7 @@ function debounce(func, wait, immediate) {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
-        var callNow = immediate && !timeout;
+        var callNow = immediate && !timeout && !appearTimeout;
         if (!timeout) {
             // clearTimeout(timeout);
             timeout = setTimeout(later, wait);
@@ -45,13 +46,15 @@ function debounce(func, wait, immediate) {
 
 // Appear Shapes           
 function makeShapeAppear() {
+    clearTimeout(appearTimeout);
+    appearTimeout = null;
     ball = getRandomInt(2);
     ball_to_end -= 1;
     seq = ball;
     shapes = document.getElementsByClassName('shape');
 
-    shapes[1 - ball].style.display = 'Block';
-    shapes[ball].style.display = 'None';
+    shapes[ball].style.display = 'Block';
+    shapes[1 - ball].style.display = 'None';
 
 
     // document.getElementById('shape').style.borderRadius = "50%";
@@ -68,7 +71,7 @@ function makeShapeAppear() {
 // Delay Function
 function appearAfterDelay() {
     if (ball_to_end > 0)
-        setTimeout(makeShapeAppear, BetweenStimuliTime);
+        appearTimeout = setTimeout(makeShapeAppear, BetweenStimuliTime);
     else
         end();
 }
@@ -78,10 +81,10 @@ function appearAfterDelay() {
 document.addEventListener('keydown', function (event) {
     if (game_state == 'run') {
         if (event.keyCode == 37) {
-            act_debounce(1);
+            act_debounce(0);
 
         } else if (event.keyCode == 39) {
-            act_debounce(0);
+            act_debounce(1);
         }
     }
     if (event.keyCode == 27) {
@@ -99,7 +102,7 @@ document.addEventListener('keydown', function (event) {
 // Update after correct input
 function endstimuli() {
 
-    shapes[ball].style.display = 'none';
+    shapes[ball].style.display = 'None';
 
     var end = new Date().getTime();
     var timeTaken = (end - start) / 1000;
