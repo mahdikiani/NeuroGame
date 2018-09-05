@@ -111,7 +111,7 @@ function endstimuli() {
     best = Math.min(timeTaken, best);
     score += 1 / timeTaken;
 
-    data.push([seq, this_ball_data]); //Save results
+    data.push({seq:seq, tries:this_ball_data}); //Save results
     this_ball_data = [];
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
     document.getElementById('timeBest').innerHTML = best + 's';
@@ -122,6 +122,8 @@ function endstimuli() {
 }
 
 function do_act(act) {
+    var end = new Date().getTime();
+    var timeTaken = (end - start) / 1000;
     this_ball_data.push(timeTaken);
     if (ball == act) {
         endstimuli();
