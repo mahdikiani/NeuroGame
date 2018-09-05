@@ -27,6 +27,7 @@ def start(bot, update):
 
 
 def button(bot: telegram.bot.Bot, update):
+    #print(json.dumps(update))
     query = update.callback_query
 
     # bot.answer_callback_query(query.message.chat_id)
