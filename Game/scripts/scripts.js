@@ -2,8 +2,8 @@ var now = new Date();
 var start = now.getTime();
 
 var max_showing_ball = 60;
-var BetweenStimuliTime = 300;
-var BetweenActTime = 100;
+var BetweenStimuliTime = 1000;
+var BetweenActTime = 500;
 var p = 0.5;
 
 var best = 100;
