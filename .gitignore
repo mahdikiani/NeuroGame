@@ -105,6 +105,7 @@ venv.bak/
 
 # secrets
 config.py
+Game/content.txt
 
 # IDE
 .idea/
