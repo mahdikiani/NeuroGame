@@ -111,7 +111,7 @@ function endstimuli() {
     best = Math.min(timeTaken, best);
     score += 1 / timeTaken;
 
-    data.push({seq:seq, tries:this_ball_data}); //Save results
+    data.push({ seq: seq, tries: this_ball_data }); //Save results
     this_ball_data = [];
     document.getElementById('timeTaken').innerHTML = timeTaken + 's';
     document.getElementById('timeBest').innerHTML = best + 's';
@@ -153,10 +153,10 @@ function end() {
     };
     xhttp.open("GET",
         "get.php?date=" + now +
-        "&data=" + JSON.stringify(data) +
-        "&id=" + url.searchParams.get("id") +
-        "&userid=" + url.searchParams.get("userid") +
-        "&tg=" + TelegramGameProxy.initParams.tgShareScoreUrl,
+            "&data=" + JSON.stringify(data) +
+            "&id=" + url.searchParams.get("id") +
+            "&userid=" + url.searchParams.get("userid") +
+            "&tg=" + (typeof (TelegramGameProxy) == 'undefined') ? '' : TelegramGameProxy.initParams.tgShareScoreUrl,
         true);
     xhttp.send();
 
